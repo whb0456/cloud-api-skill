@@ -1,0 +1,31 @@
+---
+title: "产品介绍"
+source: https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-introduction.html
+version: 上云API v1.16.1 (developer.dji.com 官网快照 2026-09)
+---
+
+## 概述
+
+目前对于 DJI 无人机接入第三方云平台，主要是基于 MSDK 开发定制 App，然后自己定义私有上云通信协议连接到云平台中。这样对于核心业务是开发云平台，无人机只是其中一个接入硬件设备的开发者来说，重新基于 MSDK 开发 App 工作量大、成本高，同时还需要花很多精力在无人机功能接口适配上，从而导致整体的方案开发进度较为缓慢。
+
+上云 API 的推出主要期望解决开发者重新造轮子的苦恼。对于没有 App 深度定制需求的开发者，直接可以采用 DJI Pilot 2 来和云平台通信，使开发商可以更加专注于上云业务接口的开发与实现。
+
+![](https://terra-1-g.djicdn.com/84f990b0bbd145e6a3930de0c55d3b2b/admin/doc/8a53bf78-1e15-45e4-aaa9-4bb8c8c86933.png)
+
+已有的第三方云接入拓扑
+
+![](https://terra-1-g.djicdn.com/84f990b0bbd145e6a3930de0c55d3b2b/admin/doc/09b08017-cb64-4cf1-9ad5-4c15c2001d93.png)
+
+上云API接入第三方云拓扑
+
+## 核心理念
+
+DJI 上云 API 主要是采用业界通用的 MQTT、HTTPS 和 WebSocket 协议，把飞机的能力抽象成物联网设备的物模型，开发者可以很方便的基于这个物模型进行业务开发，同时不用去关心飞机本身复杂的飞行控制问题。此外，上云 API 内置到 DJI Pilot 2 和大疆机场中，开发者无需重新开发 App，即可把无人机接入云平台。
+
+DJI Pilot 2 中通过内嵌 webview 引擎，开发者可以根据自身业务进行 web 页面定制开发，在相同的 DJI Pilot 2 上允许有业务差异化，从而兼容了多种不同业务的云平台。
+
+从云平台的角度来说，每种 DJI 行业设备都有一份标准的物模型文件，相同的功能接口协议在各个机型上都是一样的，这样对于开发者来说只需实现适配一次就行了，无需随着每次新品机型的发布还要重新适配，间接减少开发者研发工作量，缩短上线的周期。
+
+![](https://terra-1-g.djicdn.com/84f990b0bbd145e6a3930de0c55d3b2b/admin/doc/40db6a7f-4d7a-4d5b-ba2a-0981dabc1c04.png)
+
+上云API全景图

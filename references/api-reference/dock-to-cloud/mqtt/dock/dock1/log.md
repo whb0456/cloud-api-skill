@@ -1,0 +1,351 @@
+---
+title: "远程日志"
+source: https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/log.html
+version: 上云API v1.16.1 (developer.dji.com 官网快照 2026-09)
+---
+
+# Event
+
+## 文件上传进度通知
+
+**Topic:** thing/product/{gateway_sn}/events
+
+**Direction:** up
+
+**Method:** fileupload_progress
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| result | 返回码 | int |  | 非 0 代表错误 |
+| output | 输出 | struct |  |  |
+| »ext | 扩展信息 | struct |  |  |
+| »»files | 文件列表 | array | {"size": -, "item_type": struct} |  |
+| »»»module | 所属设备类型 | enum_int | {"0":"飞行器","3":"机场"} |  |
+| »»»size | 文件大小 | int |  | byte |
+| »»»device_sn | 设备序列号（SN） | text |  |  |
+| »»»key | 对象存储桶 Key | text |  |  |
+| »»»fingerprint | 文件指纹 | text |  |  |
+| »»»progress | 进度信息 | struct |  |  |
+| »»»»progress | 进度值 | int |  |  |
+| »»»»finish_time | 上传完成时间 | int |  |  |
+| »»»»upload_rate | 上传速率 | int |  |  |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"output": {
+			"ext": {
+				"files": [
+					{
+						"device_sn": "drone_sn",
+						"fingerprint": "4f65b891f3bc09bdb6d4c36a996b532d",
+						"key": "4bf0039f-6434-44a8-b891-8d7b6b7ff138/drone_sn/video_20220621_110830.log",
+						"module": "0",
+						"progress": {
+							"current_step": 19,
+							"finish_time": 1655781395926,
+							"progress": 100,
+							"result": 0,
+							"status": "ok",
+							"upload_rate": 0
+						},
+						"size": 155232
+					},
+					{
+						"device_sn": "dock_sn",
+						"fingerprint": "4f65b891f3bc09bdb6d4c36a996b532d",
+						"key": "4bf0039f-6434-44a8-b891-8d7b6b7ff138/dock_sn/video_20220621_110830.log",
+						"module": "3",
+						"progress": {
+							"current_step": 19,
+							"finish_time": 1655781395926,
+							"progress": 100,
+							"result": 0,
+							"status": "ok",
+							"total_step": 30,
+							"upload_rate": 0
+						},
+						"size": 155232
+					}
+				]
+			},
+			"status": "ok"
+		}
+	},
+	"gateway": "dock_sn",
+	"need_reply": 0,
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"timestamp": 1655781395926,
+	"method": "fileupload_progress"
+}
+```
+
+# Service
+
+## 获取设备可上传的文件列表
+
+**Topic:** thing/product/{gateway_sn}/services
+
+**Direction:** down
+
+**Method:** fileupload_list
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| module_list | 文件所属过滤列表 | array | {"size": -, "item_type": enum_int} |  |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"module_list": [
+			"0",
+			"3"
+		]
+	},
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"timestamp": 1654070968655,
+	"method": "fileupload_list"
+}
+```
+
+**Topic:** thing/product/{gateway_sn}/services_reply
+
+**Direction:** up
+
+**Method:** fileupload_list
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| files |  | array | {"size": 2, "item_type": struct} |  |
+| »device_sn | 设备序列号（SN） | text |  |  |
+| »result | 返回码 | int |  | 非 0 代表错误 |
+| »module | 所属设备类型 | enum_int | {"0":"飞行器","3":"机场"} |  |
+| »list | 文件索引列表 | array | {"size": -, "item_type": struct} |  |
+| »»boot_index | 文件索引 | int |  |  |
+| »»start_time | 日志开始时间 | int | {"unit_name":"秒 / s"} |  |
+| »»end_time | 日志结束时间 | int | {"unit_name":"秒 / s"} |  |
+| »»size | 日志文件大小 | int |  | byte |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"files": [
+			{
+				"device_sn": "xxxxxxxxx",
+				"list": [
+					{
+						"boot_index": 1111,
+						"end_time": 1659427398806,
+						"size": 33789,
+						"start_time": 1654070968655
+					},
+					{
+						"boot_index": 22222,
+						"end_ime": 1659427398806,
+						"size": 33789,
+						"start_time": 1659427398806
+					}
+				],
+				"module": "0",
+				"result": 0
+			},
+			{
+				"device_sn": "device_sn",
+				"list": [
+					{
+						"boot_index": 11111,
+						"end_time": 1659427398806,
+						"size": 36772,
+						"start_time": 1659427398806
+					},
+					{
+						"boot_index": 22222,
+						"end_ime": 1659427398806,
+						"size": 33789,
+						"start_time": 1659427398806
+					}
+				],
+				"module": "3",
+				"result": 0
+			}
+		],
+		"result": 0
+	},
+	"gateway": "",
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"timestamp": 1654070968655,
+	"method": "fileupload_list"
+}
+```
+
+## 发起日志文件上传
+
+设备端收到服务端下发的命令后，会直接返回执行结果状态
+
+**Topic:** thing/product/{gateway_sn}/services
+
+**Direction:** down
+
+**Method:** fileupload_start
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| bucket | 对象存储桶名称 | text |  |  |
+| region | 数据中心所在的地域 | text |  |  |
+| credentials | 凭证信息 | struct |  |  |
+| »access_key_id | 访问密钥 ID | text |  |  |
+| »access_key_secret | 秘密访问密钥 | text |  |  |
+| »expire | 访问密钥过期时间 | int | {"step":"1","unit_name":"秒 / s"} |  |
+| »security_token | 会话凭证 | text |  |  |
+| endpoint | 对外服务的访问域名 | text |  |  |
+| provider | 云厂商枚举值 | enum_string | {"ali":"阿里云","aws":"亚马逊云","minio":"minio"} |  |
+| params |  | struct |  |  |
+| »files |  | array | {"size": -, "item_type": struct} |  |
+| »»object_key | 文件在对象存储桶的 Key | text |  |  |
+| »»module | 日志所属模块 | text |  |  |
+| »»list | 日志列表 | array | {"size": -, "item_type": struct} |  |
+| »»»boot_index | 日志索引 | int |  |  |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"bucket": "stg-dji-service-hz-ksd7",
+		"credentials": {
+			"access_key_id": "STS.access_key_id",
+			"access_key_secret": "access_key_secret",
+			"expire": 1659432522000,
+			"security_token": "security_token"
+		},
+		"endpoint": "https://oss-cn-hangzhou.aliyuncs.com",
+		"params": {
+			"files": [
+				{
+					"list": [
+						{
+							"boot_index": 321
+						},
+						{
+							"boot_index": 322
+						}
+					],
+					"module": "3",
+					"object_key": "object_key"
+				}
+			]
+		},
+		"provider": "ali",
+		"region": "hz"
+	},
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"timestamp": 1659429523120,
+	"method": "fileupload_start"
+}
+```
+
+**Topic:** thing/product/{gateway_sn}/services_reply
+
+**Direction:** up
+
+**Method:** fileupload_start
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| result | 返回码 | int |  | 非 0 代表错误 |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"result": 0
+	},
+	"gateway": "",
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"timestamp": 1655781392412,
+	"method": "fileupload_start"
+}
+```
+
+## 上传状态更新
+
+设备端收到服务端下发的命令后，会直接返回执行结果状态
+
+**Topic:** thing/product/{gateway_sn}/services
+
+**Direction:** down
+
+**Method:** fileupload_update
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| status | 上传状态 | enum_string | {"cancel":"取消"} |  |
+| module_list | 日志所属模块列表 | array | {"size": -, "item_type": } |  |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"module_list": [
+			"0",
+			"3"
+		],
+		"status": "cancel"
+	},
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"method": "fileupload_update"
+}
+```
+
+**Topic:** thing/product/{gateway_sn}/services_reply
+
+**Direction:** up
+
+**Method:** fileupload_update
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| result | 返回码 | int |  | 非 0 代表错误 |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"result": 0
+	},
+	"gateway": "",
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"timestamp": 1655781392412,
+	"method": "fileupload_update"
+}
+```

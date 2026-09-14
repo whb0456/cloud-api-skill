@@ -1,0 +1,31 @@
+---
+title: "通过 JSBridge 获取日志"
+source: https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/pilot-feature-set/pull-pilot-log.html
+version: 上云API v1.16.1 (developer.dji.com 官网快照 2026-09)
+---
+
+## 功能概述
+
+对于使用DJI Pilot 2过程中，难免会出现接口通信异常，功能失效不通等问题，需要拉取Pilot2 的log日志查看进行诊断（具体可参考[Pilot 日志导出](https://developer.dji.com/doc/cloud-api-tutorial/cn/debug/log-export.html)）。为了解决该问题，DJI Pilot 2也提供了JSBridge接口给开发者进行log日志拉取，并通过webview上传到开发者自己的服务器进行分析。
+
+> **注意**： DJI Pilot 2的日志是加密的，所以需要开发者通过JSBridge接口提供日志加密的公钥信息，然后拉取到的日志也需要经过解密才能查看。DJI提供了解密日志的 JAR库，开发商运行脚本即可进行日志解密。
+
+解密方法：通过PlogDecoder.jar库，把拉取到的Log日志运行脚本进行解密。[点击下载](https://terra-1-g.djicdn.com/71a7d383e71a4fb8887a310eb746b47f/cloudapi/V1.1/PlogDecoder.jar)
+
+解密命令示例
+
+```
+java -jar PlogDecoder.jar -key "Desktop/rsa_keys/pri.key" -log "/open_platform/log-2022-01-18.log".
+//如果没有设置公钥，可以不用 -key 参数
+```
+
+## 接口详细实现
+
+- 获取日志路径 `window.djiBridge.platformGetLogPath()`
+   主要提供了可以获取到DJI Pilot 2保存的日志路径，开发者通过webview拿到路径后，可以通过文件上传的方式把日志上传。
+- 设置日志加密key `window.djiBridge.platformSetLogEncryptKey(String key)`
+   DJI Pilot 2在保存日志的时候，会做加密，如果开发者没有设置加密key，则会按照DJI Pilot 2默认的key进行加密，如果有设置key，则会按照开发者的key进行加密log日志。
+- 清除日志加密key `window.djiBridge.platformClearLogEncryptKey()`
+   如果开发者设置的加密key需要变更，则需要先清除保存在DJI Pilot 2中的key，然后再重新设置。
+
+  > **注意**：在清除加密key时，如果已经有部分log采用原有的key，则不会重新加密，此处需要开发者自己保存历史key，防止无法打开log文件。

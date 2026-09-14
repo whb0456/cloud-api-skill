@@ -1,0 +1,108 @@
+---
+title: "设备管理"
+source: https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/others/rc/device.html
+version: 上云API v1.16.1 (developer.dji.com 官网快照 2026-09)
+---
+
+# Event
+
+## 设备拓扑更新
+
+**Topic:** sys/product/{gateway_sn}/status
+
+**Direction:** up
+
+**Method:** update_topo
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| domain | 网关设备的命名空间 | string |  | 参考：[产品支持](https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-support.html) |
+| type | 网关设备的产品类型 | int |  | 参考：[产品支持](https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-support.html) |
+| sub_type | 网关子设备的产品子类型 | int |  | 参考：[产品支持](https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-support.html) |
+| device_secret | 网关设备的密钥 | text |  |  |
+| nonce | nonce | text |  |  |
+| thing_version | 网关设备的物模型版本 | text |  |  |
+| sub_devices | 子设备列表 | array | {"size": 1, "item_type": struct} |  |
+| »sn | 子设备序列号（SN） | text |  |  |
+| »domain | 子设备的命名空间 | string |  | 参考：[产品支持](https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-support.html) |
+| »type | 子设备的产品类型 | int |  | 参考：[产品支持](https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-support.html) |
+| »sub_type | 子设备的产品子类型 | int |  | 参考：[产品支持](https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-support.html) |
+| »index | 连接网关设备的通道索引 | string |  |  |
+| »device_secret | 子设备的密钥 | text |  |  |
+| »nonce | nonce | text |  |  |
+| »thing_version | 子设备的物模型版本 | text |  |  |
+
+```
+ //sub_devices online
+{
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"method": "update_topo",
+	"timestamp": 1234567890123,
+	"data": {
+		"domain": "3",
+		"type": 119,
+		"sub_type": 0,
+		"device_secret": "secret",
+		"nonce": "nonce",
+		"thing_version": "1.1.2",
+		"sub_devices": [
+			{
+				"sn": "drone001",
+				"domain": "0",
+				"type": 60,
+				"sub_type": 0,
+				"index": "A",
+				"device_secret": "secret",
+				"nonce": "nonce",
+				"thing_version": "1.1.2"
+			}
+		]
+	}
+}
+
+ //sub_devices offline
+{
+    "tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+    "bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+    "method": "update_topo",
+    "timestamp": 1234567890123,
+    "data": {
+        "domain": "3",
+        "type": 119,
+        "sub_type": 0,
+        "device_secret":"secret",
+        "nonce":"nonce",
+        "thing_version": "1.1.2",
+        "sub_devices":[]
+    }
+}
+```
+
+**Topic:** sys/product/{gateway_sn}/status_reply
+
+**Direction:** down
+
+**Method:** update_topo
+
+**Data:**
+
+| Column | Name | Type | constraint | Description |
+| --- | --- | --- | --- | --- |
+| result | 返回码 | int |  | 非 0 代表错误 |
+
+**Example:**
+
+```
+{
+	"bid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"data": {
+		"result": 0
+	},
+	"tid": "xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxx",
+	"timestamp": 1654070968655,
+	"method": "update_topo"
+}
+```

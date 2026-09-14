@@ -1,0 +1,102 @@
+---
+title: "获取上传临时凭证"
+source: https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/https/media-management/obtain-temporary-credential.html
+version: 上云API v1.16.1 (developer.dji.com 官网快照 2026-09)
+---
+
+## 生成上传文件临时凭证
+
+`POST /storage/api/v1/workspaces/{workspace_id}/sts`
+
+### Parameters
+
+| Name | In | Type | Required | Description |
+| --- | --- | --- | --- | --- |
+| workspace_id | path | string | true | 工作空间id |
+| x-auth-token | header | string | true | 访问令牌 |
+
+### Responses
+
+| Status | Meaning | Description | Schema |
+| --- | --- | --- | --- |
+| 200 |  | OK | [storage.GetStsOutput](#schemastorage.getstsoutput) |
+
+> Example responses
+
+```
+{
+  "code":0,
+  "data":{
+    "bucket":"string",
+    "credentials":{
+      "access_key_id":"STS.NUBdKtVadL1U8aBJ2TH6PWoYo",
+      "access_key_secret":"9NG2P2yJaUrck576CkdRoRbchKssJiZygi5D93CBsduY",
+      "expire":3600,
+      "security_token":"CAIS8AN1q6Ft5B2yfSjIr5b3L/HAu75F+/O+OkfzrjIBRLl8uKryjTz2IHhOenBhB+Actfk+lWhV6v0Tlrt+UMQcHQnKbM99q49L9hmobIeZWV4pagxD2vOfAmG2J0PRH6WwCryLq7q/F96pb1fb7FgRpZLxaTSlWXG8LJSNkuQJR98LXw6+H1UkadBNPVkg0sJ4U0HcLvGwKBXnr3PNBU5zwGpGhHh49L60z7+9iDXXh0aozfQO9cajYMqkfYxiPZNyFsyp2/Z/eaeEzCNL918X/fl43aAY83Kdt4rNRgVbvx/DY7Tao5g0JVEmNqQzQ6RK8PG714+D046+voDzzAk3fIMxei/DRYem7dLZEeeyTLgQfqr6PHK/q7LoMYLu4Sclem48PgFHcMY6UCUSbyYhUTbHMKSq1UnXawO4Mci/3boxzIB+wieWn6aDLEPdRK6Cg2RKeM05flsoMAIRxhaiEM09bxZNdVxDBrWYN+d0dwsMkbnlswzCJFQCqXFeufLsZ/TL/fpHMNi4HLA+iNpCPcQa6zd6Fg+rEunw1n15LjI1Hexkt4D2IoK65bO/x+GeXPXLEPhvuC8BKWqP9nvTGSkLcHygvoB/MguCjt/N1+nM4dZuEQ8jo8tDChuMftsos1F9/+6o6BCe4DNU548fW6tTGoABfvC8lAYwapu2ryxHRLeBodm278eCTa57hXytE/f/l9neR9Zg9tLoIJzFOdjs2gLfVc+BhjQ0GkZDP9ie332XnhH5nOugICpYlv5++p2Ap6WZIKTVEkFetdVKjkxal2zhXoCN9Aq4YeLn5bfQiTHrA3pjjhuE7sMSFsMVdxVvftI="
+    },
+    "endpoint":"https://oss-cn-hangzhou.aliyuncs.com",
+    "object_key_prefix":"5a6f9d4b-2a38-4b4b-86f9-3a678da0bf4a",
+    "provider":"ali",
+    "region": "cn-hangzhou"
+  },
+  "message":"success"
+}
+```
+
+# Schemas
+
+## storage.GetStsOutput
+
+```
+{
+  "code":0,
+  "message":"string",
+  "data":{
+    "bucket":"string",
+    "credentials":{
+      "access_key_id":"string",
+      "access_key_secret":"string",
+      "expire":0,
+      "security_token":"string"
+    },
+    "endpoint":"string",
+    "object_key_prefix":"string",
+    "provider":"ali",
+    "region":"string"
+  }
+}
+```
+
+*Properties*
+
+| Name | Type | Required | Restrictions | Description |
+| --- | --- | --- | --- | --- |
+| code | intger | false | none | 错误码 |
+| message | string | false | none | 描述 |
+| data | string | false | none | 返回内容 |
+| » bucket | string | false | none | 对象存储桶名称 |
+| » credentials | [storage.Credentials](#schemastorage.credentials) |  | none | 凭证信息 |
+| » endpoint | string | false | none | 对外服务的访问域名 |
+| » object_key_prefix | string | false | none | 文件在对象存储桶的key的前缀 |
+| » provider | string | false | none | 云厂商枚举值；* ali - 阿里云；* aws - 亚马逊云；* minio - minio |
+| » region | string | false | none | 数据中心所在的地域,参考相应云厂商region枚举值 |
+
+## storage.Credentials
+
+```
+{
+  "access_key_id": "string",
+  "access_key_secret": "string",
+  "expire": 0,
+  "security_token": "string"
+}
+```
+
+*Properties*
+
+| Name | Type | Required | Restrictions | Description |
+| --- | --- | --- | --- | --- |
+| access_key_id | string | false | none | 访问密钥ID（用于云厂商标志用户） |
+| access_key_secret | string | false | none | 秘密访问密钥（用于加密签名字符串和云厂商用来验证签名字符串的密钥） |
+| expire | integer | false | none | 访问密钥过期时间 |
+| security_token | string | false | none | session token |

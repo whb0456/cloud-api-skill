@@ -1,0 +1,1288 @@
+---
+title: "版本发布记录"
+source: https://developer.dji.com/doc/cloud-api-tutorial/cn/index.html
+version: 上云API v1.16.1 (developer.dji.com 官网快照 2026-09)
+---
+
+## 关于DJI Cloud API Demo 终止维护公告
+
+### 发布日期：2025年4月10日
+
+1.项目终止维护说明 即日起，大疆创新(DJI)将停止对DJI Cloud API Demo (地址：https://github.com/dji-sdk/Cloud-API-Demo-Web、https://github.com/dji-sdk/DJI-Cloud-API-Demo）示例项目的更新与技术支持。 该项目作为官方提供的云端集成参考实现，旨在辅助开发者理解API调用逻辑。并非生产级解决方案，可能存在未修复的安全隐患（如数据泄露、未授权访问等）。请避免在生产环境中直接使用Demo中的代码，若直接使用我们强烈建议您启动安全自查，或避免将基于该Demo的服务暴露于公网环境。
+
+2.免责声明 因直接使用Demo代码导致的业务损失、数据风险或第三方纠纷，DJI将不承担任何责任。
+
+3.后续支持 如有疑问，请联系DJI开发者支持团队（邮箱：developer@dji.com)或访问大疆开发者社区获取最新技术资源。 感谢您一直以来的理解与支持！
+
+## 上云 API v1.16.1 发布记录
+
+### 发布日期
+
+2025.12.17
+
+### 发布列表
+
+##### 机场上云
+
+- 大疆机场 3 新增支持的功能：
+
+  - [红外照片支持保存为中国电力行业推荐的标准格式（DLT-664）](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/remote-control.html#%E7%BA%A2%E5%A4%96%E7%85%A7%E7%89%87%E6%A0%BC%E5%BC%8F%E8%AE%BE%E7%BD%AE)
+  - 支持自定义飞行器的返航预留电量，可设置飞行器可读写设备属性remaining_power_for_return_home
+- 大疆机场 2 新增支持的功能：
+
+  - 支持自定义飞行器的返航预留电量，可设置飞行器可读写设备属性remaining_power_for_return_home
+
+### 新功能支持产品及最低固件版本要求
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Matrice 4D/4TD | 14.03.00.03 |
+| 大疆机场 3 | 14.03.00.03 |
+| Matrice 3D/3TD | 14.03.07.01 |
+| DJI RC Pro 行业版 | 02.01.07.04 |
+| 大疆机场 2 | 14.03.07.01 |
+
+## 上云 API v1.16 发布记录
+
+### 发布日期
+
+2025.11.26
+
+### 发布列表
+
+##### 机场上云
+
+- 大疆机场 3 新增支持的功能：
+  - [AI目标识别，目标跟随](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/remote-control.html#ai%E8%AF%86%E5%88%AB%E5%BC%80%E5%85%B3%E8%AE%BE%E7%BD%AE)，[AI识别功能介绍](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/ai-target-recognition.html)
+
+## 上云 API v1.15 发布记录
+
+### 发布日期
+
+2025.06.10
+
+### 发布列表
+
+##### 机场上云
+
+- 大疆机场 3 新增支持的功能：
+  - [固件升级-PSDK固件升级](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/firmware.html)
+
+##### Pilot上云
+
+- 新增支持 DJI Matrice 400 设备类型：
+- 新增支持 MOP 数据传输模块的使用；
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+## 上云 API v1.14 发布记录
+
+### 发布日期
+
+2025.04.15
+
+### 发布列表
+
+##### 机场上云
+
+- 大疆机场 3 新增支持的功能：
+
+  - [自定义飞行区](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/custom-fly-region.html)
+  - [远程解禁](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/flysafe.html)
+  - [远程控制 - 强制降落](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/remote-control.html#%E5%BC%BA%E5%88%B6%E9%99%8D%E8%90%BD)
+  - [航线管理 - 支持空中下发航线](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/wayline.html#%E7%A9%BA%E4%B8%AD%E4%B8%8B%E5%8F%91%E8%88%AA%E7%BA%BF)
+  - [航线管理 - 下发任务中的模拟器支持设置高度](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/wayline.html#%E4%B8%8B%E5%8F%91%E4%BB%BB%E5%8A%A1)
+- 大疆机场 2 新增支持的功能：
+
+  - [航线管理 - 支持空中下发航线](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/wayline.html#%E7%A9%BA%E4%B8%AD%E4%B8%8B%E5%8F%91%E8%88%AA%E7%BA%BF)
+
+##### Pilot上云
+
+- DJI Matrice 4D/4TD 飞行器支持的功能：
+  - [指令飞行 - 支持 POI 环绕模式](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/dji-rc-plus-2/drc.html#%E9%A3%9E%E8%A1%8C%E6%8E%A7%E5%88%B6%E2%80%94%E8%BF%9B%E5%85%A5-poi-%E7%8E%AF%E7%BB%95%E6%A8%A1%E5%BC%8F)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 10.1.0.30 |
+| Matrice 350 RTK | 10.01.00.09 |
+| Matrice 30/30T | 10.01.00.14 |
+| Matrice 300 RTK（搭配 DJI RC Plus） | 60.01.00.03 |
+| Matrice 300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 05.02.11.06 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| DJI Matrice 4E/4T | 12.00.01.06 |
+| DJI RC Plus 2 | 01.41.02.06 |
+| Mavic 3E/3T | 10.01.00.14 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Matrice 4D/4TD | 13.01.00.02 |
+| 大疆机场 3 | 13.01.00.02 |
+| Matrice 3D/3TD | 10.01.32.05 |
+| DJI RC Pro 行业版 | 02.01.05.15 |
+| 大疆机场 2 | 10.01.32.05 |
+| Matrice 30/30T | 10.01.0014 |
+| DJI RC Plus | 05.02.1106 |
+| 大疆机场 | 10.01.0205 |
+
+## 上云 API v1.13.0 发布记录
+
+### 发布日期
+
+2025.02.27
+
+### 发布列表
+
+- 机场上云新增支持设备：
+
+  - 大疆机场 3
+  - DJI Matrice 4D/4TD 飞行器
+  - AL1 探照灯
+  - AS1 喊话器
+- 大疆机场 3 支持的功能列表：
+
+  - [设备属性](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/properties.html)
+  - [设备管理](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/device.html)
+  - [组织管理](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/organization.html)
+  - [直播功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/live.html)
+  - [媒体管理](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/media.html)
+  - [航线管理](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/wayline.html)
+  - [HMS管理](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/hms.html)
+  - [远程调试](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/cmd.html)
+  - [固件升级](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/firmware.html)
+  - [远程日志](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/log.html)
+  - [配置更新](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/config.html)
+  - [指令飞行](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/drc.html)
+  - [自定义飞行区](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/custom-fly-region.html)
+  - [PSDK功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/psdk.html)
+  - [PSDK互联互通](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/psdk-transmit-custom-data.html)
+  - [ESDK互联互通](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/esdk-transmit-custom-data.html)
+  - [远程解禁](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/flysafe.html)
+  - [远程控制](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock3/remote-control.html)
+- DJI Matrice 4D/4TD 飞行器支持的功能：
+
+  - [M4D/M4TD 设备属性](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/aircraft/m4d-properties.html)
+- AL1 探照灯支持功能列表：
+
+  - 参考 [指令飞行/远程控制](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/drc.html) 探照灯相关章节。
+- AS1 喊话器支持功能列表：
+
+  - 参考 [指令飞行/远程控制](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/drc.html) 喊话器相关章节。
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 10.1.0.30 |
+| Matrice 350 RTK | 10.01.00.09 |
+| Matrice 30/30T | 10.01.00.14 |
+| Matrice 300 RTK（搭配 DJI RC Plus） | 60.01.00.03 |
+| Matrice 300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 05.02.11.06 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| DJI Matrice 4E/4T | 12.00.01.06 |
+| DJI RC Plus 2 | 01.41.02.06 |
+| Mavic 3E/3T | 10.01.00.14 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Matrice 4D/4TD | 01.00.00.01 |
+| 大疆机场 3 | 01.00.00.01 |
+| Matrice 3D/3TD | 10.01.32.05 |
+| DJI RC Pro 行业版 | 02.01.05.15 |
+| 大疆机场 2 | 10.01.32.05 |
+| Matrice 30/30T | 10.01.0014 |
+| DJI RC Plus | 05.02.1106 |
+| 大疆机场 | 10.01.0205 |
+
+## 上云 API v1.12.0 发布记录
+
+### 发布日期
+
+2025.01.08
+
+### 发布列表
+
+支持 DJI Matrice 4E/4T 飞行器：
+
+- [支持基本的飞行器设备属性推送](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/m4-series/properties.html)
+- [支持基本的遥控设备属性推送](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/dji-rc-plus-2/properties.html)
+- [新增飞行器操控接口，支持起飞，返航，指点飞行，设置返航高度等功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/dji-rc-plus-2/drc.html)
+- [新增云台和相机操控接口，支持云台朝向调整，云台回中，切换镜头等功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/dji-rc-plus-2/remote-control.html)
+- [新增支持飞行器和云台控制权获取和释放功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/pilot-feature-set/drc.html)
+- [新增支持在面状航线正射采集下开启正射摆拍功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dji-wpml/template-kml.html)
+- [新增支持空间线面类型的地图元素功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/https/map-elements/create.html)
+- [新增支持观测记录的地图元素功能，同时支持观测记录同步到三方云](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/pilot-feature-set/pilot-map-elements.html)
+
+> **注意**：此版本仅更新了DJI Pilot2 上云 API，请基于最新版本Pilot App 2 测试。
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 10.1.0.30 |
+| Matrice 350 RTK | 10.01.00.09 |
+| Matrice 30/30T | 10.01.00.14 |
+| Matrice 300 RTK（搭配 DJI RC Plus） | 60.01.00.03 |
+| Matrice 300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 05.02.11.06 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| DJI Matrice 4E/4T | 12.00.01.06 |
+| DJI RC Plus 2 | 01.41.02.06 |
+| Mavic 3E/3T | 10.01.00.14 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 10.01.32.05 |
+| DJI RC Pro 行业版 | 02.01.05.15 |
+| 大疆机场 2 | 10.01.32.05 |
+| Matrice 30/30T | 10.01.0014 |
+| DJI RC Plus | 05.02.1106 |
+| 大疆机场 | 10.01.0205 |
+
+## 上云 API v1.11.3 发布记录
+
+### 发布日期
+
+2024.11.07
+
+### 发布列表
+
+大疆机场 2
+
+- [支持更多负载控制能力：定时拍、联动变焦设置等](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/remote-control.html)
+- [支持 RTCM 数据（.dat 格式）上云](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/dock-media-management.html)
+- 在[指令飞行](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/drc.html)和[航线管理](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/wayline.html)功能中增加起飞前是否拉取地形数据的开关 `flight_safety_advance_check`
+- [支持紧急降落和强制降落，两种降落过程都可以通过 drone_emergency_stop 取消](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/remote-control.html)
+- [增加是否强制关闭仓盖的消息确认 API](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/cmd.html)
+- [支持 PSDK 互联互通](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/psdk-transmit-custom-data.html)
+
+**注意：RTCM 数据（.dat 格式）会和媒体文件一起上传，.dat 格式文件的显示需要额外适配。**
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 10.1.0.30 |
+| Matrice 350 RTK | 10.01.00.09 |
+| Matrice 30/30T | 10.01.00.14 |
+| Matrice 300 RTK（搭配 DJI RC Plus） | 60.01.00.03 |
+| Matrice 300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 05.02.11.06 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| Mavic 3E/3T | 10.01.00.14 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 10.01.32.05 |
+| DJI RC Pro 行业版 | 02.01.05.15 |
+| 大疆机场 2 | 10.01.32.05 |
+| Matrice 30/30T | 10.01.0014 |
+| DJI RC Plus | 05.02.1106 |
+| 大疆机场 | 10.01.0205 |
+
+## 上云 API v1.11.2 发布记录
+
+### 发布日期
+
+2024.09.26
+
+### 发布列表
+
+大疆机场：
+
+[支持“取消准备中的任务”接口，允许下发飞行命令后，飞机在未起飞且RTK未收敛这段时间内，取消飞行任务。](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/wayline.html)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 10.1.0.30 |
+| Matrice 350 RTK | 10.01.00.09 |
+| Matrice 30/30T | 10.01.00.14 |
+| Matrice 300 RTK（搭配 DJI RC Plus） | 60.01.00.03 |
+| Matrice 300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 05.02.11.06 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| Mavic 3E/3T | 10.01.00.14 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 10.01.1607 |
+| DJI RC Pro 行业版 | 02.01.0507 |
+| 大疆机场 2 | 10.01.1607 |
+| Matrice 30/30T | 10.01.0014 |
+| DJI RC Plus | 05.02.1106 |
+| 大疆机场 | 10.01.0205 |
+
+## 上云 API v1.11.1 发布记录
+
+### 发布日期
+
+2024.08.13
+
+### 发布列表
+
+大疆机场 2 开放蛙跳任务的硬件层接口，开发者可以参考[蛙跳任务教程](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/multi-dock.html)自行开发类似功能。
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 10.1.0.30 |
+| Matrice 350 RTK | 10.01.00.09 |
+| Matrice 30/30T | 10.01.00.14 |
+| Matrice 300 RTK（搭配 DJI RC Plus） | 60.01.00.03 |
+| Matrice 300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 05.02.11.06 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| Mavic 3E/3T | 10.01.00.14 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 10.01.1607 |
+| DJI RC Pro 行业版 | 02.01.0507 |
+| 大疆机场 2 | 10.01.1607 |
+| Matrice 30/30T | 10.01.0014 |
+| DJI RC Plus | 05.02.1106 |
+| 大疆机场 | 10.01.0203 |
+
+## 上云 API v1.11.0 发布记录
+
+### 发布日期
+
+2024.07.18
+
+### 发布列表
+
+#### Pilot 上云协议
+
+DJI Mavic 3 行业系列机型支持远程控飞行器云台，新增[指令飞行协议](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/rc-pro/drc.html)与[远程控制协议](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/pilot-to-cloud/mqtt/rc-pro/remote-control.html)，并提供了相关[教程指导](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/pilot-feature-set/drc.html)
+
+#### 机场上云协议
+
+大疆机场 和 大疆机场 2：
+
+- [新增支持设置 NTP 服务器端口号](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/config.html)
+- [新增支持远程解禁功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/flysafe.html)
+
+大疆机场 2：
+
+- [支持航点航线拍摄全景照片](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dji-wpml/common-element.html)
+- [新增内嵌 SRT 字幕信息 (含飞行器/云台姿态信息) 到视频文件中](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/dock-media-management.html)
+- [新增远程控制功能：](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/remote-control.html)
+  - 支持隐蔽模式、夜航灯开关设置
+  - 支持相机光圈、相机快门、ISO设置
+  - Matrice 3D 机型支持机械快门、镜头去畸变开关设置
+- [Matrice 3D 机型支持航线任务的 ppk 文件回传，可以下载、云端互联传输，并开放上云 API 接口](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/dock-media-management.html)
+- [指令飞行功能 DRC-心跳协议（Method: heart_beat）变更了超时时间](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/drc.html)
+
+#### 教程指导
+
+- 新增 [Pilot 上云远程控制/指令飞行](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/pilot-feature-set/drc.html)、[自定义飞行区教程指导](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/custom-flight-area.html)、
+- [HMS 功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/hms.html) 中 [hms.json](https://terra-1-g.djicdn.com/fee90c2e03e04e8da67ea6f56365fc76/SDK%20%E6%96%87%E6%A1%A3/CloudAPI/hms.json) 文件地址迁移
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 10.1.0.30 |
+| Matrice 350 RTK | 10.01.00.09 |
+| Matrice 30/30T | 10.01.00.14 |
+| Matrice 300 RTK（搭配 DJI RC Plus） | 60.01.00.03 |
+| Matrice 300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 05.02.11.06 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| Mavic 3E/3T | 10.01.00.14 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 10.01.16.04 |
+| DJI RC Pro 行业版 | 02.01.05.07 |
+| 大疆机场 2 | 10.01.16.04 |
+| Matrice 30/30T | 10.01.00.14 |
+| DJI RC Plus | 05.02.11.06 |
+| 大疆机场 | 10.01.0203 |
+
+## 上云 API v1.10.0 发布记录
+
+### 发布日期
+
+2024.04.07
+
+### 发布列表
+
+- [Matrice 3D/3TD 设备属性：](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/aircraft/m3d-properties.html)
+  - 新增广角镜头、变焦镜头、红外测温相关设备属性
+  - 相机模式（camera_mode）枚举值变更
+- 大疆机场 2：
+  - [设备属性新增静音模式](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/properties.html)
+  - [直播功能：](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/live.html)
+    - 新增 WebRTC 直播协议类型
+    - 新增直播相机切换协议
+  - [指令飞行功能：](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/drc.html)
+    - 新增相机曝光设置、红外相机温度显示等负载控制能力
+    - 完善夜间作业能力：设置对焦模式、切换智能低光模式等
+    - 新增全景图拍照模式
+    - 新增负载控制能力：框选变焦
+  - [新增自定义飞行区功能，并提供了自定义飞行区文件模板](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/custom-flight-area.html)
+  - [新增 AirSense 功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/airsense.html)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 9.1.0.21 |
+| M350 RTK | 09.01.01.02 |
+| Matrice 30/30T | 09.01.00.06 |
+| M300 RTK（搭配 DJI RC Plus） | 59.01.00.01 |
+| M300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 03.02.09.07 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| Mavic 3E/3T | 09.02.07.06 |
+| DJI RC Pro 行业版 | 02.01.03.19 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 09.02.0108 |
+| DJI RC Pro 行业版 | 02.01.0319 |
+| 大疆机场 2 | 09.02.0108 |
+| Matrice 30/30T | 09.01.0006 |
+| DJI RC Plus | 03.02.0907 |
+| 大疆机场 | 01.06.1704 |
+
+## 上云 API v1.9.0 发布记录
+
+### 发布日期
+
+2024.02.22
+
+### 发布列表
+
+- [航线文件格式（DJI WPML）](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dji-wpml/overview.html)：
+  - 新增全景图拍照动作支持
+  - 航带飞行新增支持变高航带
+- 大疆机场：
+  - [设备属性](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/properties.html)新增静音模式
+  - [直播功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/live.html)：新增 WebRTC 直播协议类型
+  - [指令飞行功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/drc.html)：
+    - 新增相机曝光设置、红外相机温度显示等负载控制能力
+    - 完善夜间作业能力：设置对焦模式、切换智能低光模式等
+    - 新增全景图拍照模式
+    - 新增支持 POI
+  - [新增自定义飞行区功能，并提供了自定义飞行区文件模板。](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/custom-flight-area.html)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 9.1.0.21 |
+| M350 RTK | 09.01.01.02 |
+| Matrice 30/30T | 09.01.00.06 |
+| M300 RTK（搭配 DJI RC Plus） | 59.01.00.01 |
+| M300 RTK（搭配 DJI 带屏遥控器行业版） | 09.00.05.03 |
+| DJI RC Plus | 03.02.09.07 |
+| DJI 带屏遥控器行业版 | 09.00.05.01 |
+| Mavic 3E/3T | 09.00.05.05 |
+| DJI RC Pro 行业版 | 02.01.02.02 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 09.00.06.01 |
+| DJI RC Pro 行业版 | 02.01.02.02 |
+| 大疆机场 2 | 09.00.06.01 |
+| Matrice 30/30T | 09.01.0006 |
+| DJI RC Plus | 03.02.0907 |
+| 大疆机场 | 01.06.1704 |
+
+## 上云 API V1.8.0 发布记录
+
+### 发布日期
+
+2023.12.11
+
+### 发布列表
+
+- [新增支持大疆机场 2 和 Matrice 3D/3TD 机型](https://developer.dji.com/doc/cloud-api-tutorial/cn/overview/product-support.html)
+- [航线文件格式（DJI WPML）新增 Matrice 3D/3TD 机型对字段的支持](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dji-wpml/template-kml.html)
+- 大疆机场 2 的物模型协议相对于大疆机场的物模型协议差异如下：
+  - [航线管理功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/wayline.html)：下发任务（Method: flighttask_prepare）新增航线精度类型字段（wayline_precision_type）
+  - [远程调试功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/cmd.html)：新增 4G Dongle 相关协议
+  - [指令飞行功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock2/drc.html)：
+    - 一键起飞协议（Method: takeoff_to_point）中部分字段为必填项
+    - flyto 飞向目标点(Method: fly_to_point) 和一键起飞（Method: takeoff_to_point）协议新增最低飞行高度说明：飞行器有最低飞行高度(20 m)安全保障机制，如果飞行器相对起飞点高度低于 20 m，会先上升到 20 m
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| DJI Pilot 2 | 8.0.0.38 |
+| M350 RTK | 08.00.00.04 |
+| Matrice 30/30T | 08.00.00.03 |
+| M300 RTK（搭配 DJI RC Plus） | 58.00.00.10 |
+| M300 RTK（搭配 DJI 带屏遥控器行业版） | 07.00.01.00 |
+| DJI RC Plus | 02.02.05.07 |
+| DJI 带屏遥控器行业版 | 07.00.01.01 |
+| Mavic 3E/3T | 07.01.20.01 |
+| DJI RC Pro 行业版 | 02.01.01.08 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 3D/3TD | 09.00.01.00 |
+| DJI RC Pro 行业版 | 02.01.01.08 |
+| 大疆机场 2 | 09.00.01.00 |
+| Matrice 30/30T | 08.00.0003 |
+| DJI RC Plus | 02.02.0405 |
+| 大疆机场 | 01.05.0905 |
+
+## 上云 API V1.7.0 发布记录
+
+### 发布日期
+
+2023-09-18
+
+### 发布列表
+
+- [航线管理功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/wayline.html)
+  - 新增模拟飞行调试 `simulate_mission`
+  - 新增航线 2.0 功能
+  - 新增 `return_home_info` 事件通知
+- [指令飞行功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/drc.html)
+  - 新增模拟飞行调试 `simulate_mission`
+  - 上线指令飞行 2.0 功能
+  - 新增 lookat `camera_look_at` 与分屏协议 `camera_screen_split`
+  - 新照片、视频存储设置协议 `photo_storage_set` 和 `video_storage_set`
+- 新增 [ESDK 互联互通](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/esdk-transmit-custom-data.html)、[PSDK 互联互通](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/psdk-transmit-custom-data.html)
+- 新增 [PSDK 和喊话器相关协议](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/psdk.html)
+- 新增 [AirSense 功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/airsense.html)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M350 RTK | 07.01.00.01 |
+| Matrice 30/30T | 07.01.00.26 |
+| M300 RTK（搭配 DJI RC Plus） | 57.01.00.01 |
+| M300 RTK（搭配 DJI 带屏遥控器行业版） | 07.00.01.00 |
+| DJI RC Plus | 02.02.0405 |
+| DJI 带屏遥控器行业版 | 07.00.01.01 |
+| Mavic 3E/3T | 07.01.10.03 |
+| DJI RC Pro 行业版 | 02.01.00.03 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 30/30T | 07.01.00.26 |
+| DJI RC Plus | 02.02.0405 |
+| 大疆机场 | 01.05.0902 |
+
+## 上云 API V1.6.0 发布记录
+
+### 发布日期
+
+2023-07-18
+
+### 发布列表
+
+[飞行器设备属性更新：增加 RID 工作状态、国家区域码](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/aircraft/properties.html)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M350 RTK | 07.00.00.02 |
+| Matrice 30/30T | 07.00.01.46 |
+| M300 RTK（搭配 DJI RC Plus） | 57.00.01.00 |
+| M300 RTK（搭配 DJI 带屏遥控器行业版） | 07.00.01.00 |
+| DJI RC Plus | 01.02.04.45 |
+| DJI 带屏遥控器行业版 | 07.00.01.01 |
+| Mavic 3E/3T | 07.00.01.02 |
+| DJI RC Pro 行业版 | 02.00.05.01 |
+
+|  |  |
+| --- | --- |
+| 产品 | Pilot版本 |
+| DJI RC Plus | 7.0.3.9 |
+| DJI RC Pro 行业版 | 7.0.2.2 |
+| DJI 带屏遥控器行业版 | 7.0.2.5 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| Matrice 30/30T | 07.00.0146 |
+| DJI RC Plus | 01.02.0445 |
+| 大疆机场 | 01.04.0705 |
+| DJI Pilot 2 | 7.0.3.9 |
+
+## 上云 API V1.5.0 发布记录
+
+### 发布日期
+
+2023-05-18
+
+### 发布列表
+
+- 新增支持机型：Matrice 350 RTK
+- Matrice 300 RTK 新增支持遥控器：DJI RC Plus
+- [航线管理教程新增`断点续飞`内容](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/dock-wayline-management.html)
+- [告警文案查询json文件更新](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/hms.html)
+
+  - [hms.json](https://terra-1-g.djicdn.com/fee90c2e03e04e8da67ea6f56365fc76/SDK%20%E6%96%87%E6%A1%A3/CloudAPI/hms.json)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M350 RTK | 07.00.00.01 |
+| M3E/M3T | 06.01.06.06 |
+| M30/M30T | 06.01.10.02 |
+| M300 RTK | 57.00.01.00（仅支持 DJI RC Plus） |
+| M300 RTK | 07.00.01.00（仅支持 DJI 带屏遥控器行业版） |
+| DJI RC Plus | 01.02.04.40 |
+| DJI RC Pro 行业版 | 02.00.04.07 |
+| DJI 带屏遥控器行业版 | 07.00.01.00 |
+
+|  |  |
+| --- | --- |
+| 产品 | Pilot版本 |
+| DJI RC Plus | 7.0.1.0 |
+| DJI RC Pro 行业版 | 6.1.2.2 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M30/M30T | 06.02.0803 |
+| DJI RC Plus | 01.02.0367 |
+| 大疆机场 | 01.03.0902；**一旦机场固件版本升级至 01.03.0902，不允许回滚，因为这将导致设备上线异常。** |
+| DJI Pilot 2 | 6.1.2.2 |
+
+## 上云 API V1.4.0 发布记录
+
+### 发布日期
+
+2023-04-25
+
+### 发布列表
+
+- [功能集合 > 机场功能集：新增指令飞行教程](https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/drc.html)
+- 云端 API > MQTT：
+
+  - 航线管理：[新增 `航线暂停`和`航线恢复`的协议以及断点续飞的能力](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/wayline.html)
+  - [远程日志：新增支持 minio](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/log.html)
+  - [Topic 定义：新增 DRC Topic 与结构示例](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/topic-definition.html)
+  - 设备属性：新增[指令飞行相关设备属性](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/properties.html)、[调色盘属性](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/aircraft/properties.html)
+  - [新增指令飞行功能：](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/drc.html)
+    - 飞行控制：飞行方向和云台转向控制、一键起飞、flyto
+    - 负载控制：拍照、录像、停止录像、双击 AIM等
+    - 事件上报：避障、HSI 信息、直播链路延迟信息
+- [错误码：新增指令飞行相关错误码](https://developer.dji.com/doc/cloud-api-tutorial/cn/error-code.html)
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M3E/M3T | 06.01.06.06 |
+| M30/M30T | 06.01.10.02 |
+| M300 RTK | 04.01.00.00 |
+| DJI RC Plus | 01.02.03.66 |
+| DJI RC Pro 行业版 | 02.00.04.07 |
+| DJI Pilot 2 | 6.1.2.2 |
+
+机场上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M30/M30T | 06.02.0803 |
+| DJI RC Plus | 01.02.0367 |
+| 大疆机场 | 01.03.0902；**一旦机场固件版本升级至 01.03.0902，不允许回滚，因为这将导致设备上线异常。** |
+| DJI Pilot 2 | 6.1.2.2 |
+
+### 即将支持的功能列表
+
+飞行器和机场可以通过私有 4G 增强图传服务器传输数据
+
+## 上云 API V1.3.2 发布记录
+
+### 发布日期
+
+2023-03-10
+
+### 发布功能列表
+
+机场：
+
+- 设备属性：新增机场空调状态，更新飞行器电池保养信息
+- 配置更新：新增 License 配置
+- 航线任务：新增条件任务
+- 远程调试：新增机场空调工作模式切换
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M3E/M3T | 06.01.06.06 |
+| M30/M30T | 06.01.10.02 |
+| M300 RTK | 04.01.00.00 |
+| DJI RC Plus | 01.02.03.66 |
+| DJI RC Pro 行业版 | 02.00.04.07 |
+| DJI Pilot 2 | 6.1.2.2 |
+
+机场上云（适配实体机场，非单板）
+
+|  |  |
+| --- | --- |
+| 产品 | 固件版本 |
+| M30/M30T | 06.01.10.02 |
+| DJI RC Plus | 01.02.03.66 |
+| 大疆机场 | 01.02.05.00 |
+| DJI Pilot 2 | 6.1.2.2 |
+
+### 即将支持的功能列表
+
+指令飞行
+
+## 上云API V1.3.1 发布记录
+
+### 发布日期
+
+2022-12-12
+
+### 发布功能列表
+
+- 机场上云API 远程调试:
+  - 新增 API: `图传增强`
+- HMS 告警文案更新
+- Pilot上云API 媒体管理：
+  - `媒体文件上传结果上报` API 增加上传文件结果码
+  - 新增 API：`文件组上传完成后回调`
+- 新增机型支持：DJI Mavic 3 多光谱版
+- Demo 新增example: 固件管理、媒体优先级上传、图传增强
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+> - [DJI Pilot 2 的安装包获取方式](https://sdk-forum.dji.net/hc/zh-cn/articles/6177232395801-Pilot2-%E6%80%8E%E4%B9%88%E5%AE%89%E8%A3%85-%E5%93%AA%E9%87%8C%E8%83%BD%E5%A4%9F%E8%8E%B7%E5%8F%96%E5%88%B0%E5%AE%89%E8%A3%85%E5%8C%85-)
+
+DJI Pilot 2 上云
+
+| 产品 | 固件版本 |
+| --- | --- |
+| DJI Mavic 3 行业系列；DJI Mavic 3 多光谱版 | 05.00.05.06 |
+| DJI RC Pro 行业版 | 02.00.03.03 |
+| DJI Pilot 2 | 5.2.1.3 |
+
+| 产品 | 固件版本 |
+| --- | --- |
+| Matrice 30 系列 | 04.05.10.03 |
+| Matrice 300 RTK | 04.01.00.00 |
+| DJI Pilot 2 | 5.0.2.9 |
+
+机场上云（适配实体机场，非单板）
+
+| 产品 | 固件版本 |
+| --- | --- |
+| Matrice 30 系列 | 05.01.02.14 |
+| DJI RC Plus | 01.02.03.39 |
+| 大疆机场 | 00.03.00.04 |
+| DJI Pilot 2 | 6.0.1.1 |
+
+### 即将支持的功能列表
+
+机场上云API：
+
+- 飞行器急停控制
+- 飞行器返航备降点控制
+- 一键自检
+
+## 上云API V1.3.0 发布记录
+
+### 发布日期
+
+2022-11-18
+
+### 发布功能列表
+
+机场上云API：
+
+- 远程调试：飞行器电池保养状态切换、飞行器电池模式切换、机场声光报警开关切换
+- 媒体管理：媒体文件上传优先级控制
+- 航线管理：设备返航退出状态通知
+
+### 支持产品列表与固件版本
+
+> **注意**：
+>
+> - 固件获取路径：在[大疆官网](https://www.dji.com/)搜索对应机型，点击“下载”字样进入下载界面，自行下载。
+> - 表格中的固件版本为能支持开发的最低版本。
+
+DJI Pilot 2 上云
+
+| 产品 | 固件版本 |
+| --- | --- |
+| DJI Mavic 3 行业系列 | 05.00.02.04 |
+| Matrice 30 系列 | 04.05.10.03 |
+| Matrice 300 RTK | 04.01.00.00 |
+| DJI Pilot 2 | 5.0.2.9 |
+
+机场上云（适配实体机场，非单板）
+
+| 产品 | 固件版本 |
+| --- | --- |
+| Matrice 30 系列 | 05.01.02.12 |
+| 大疆机场 | 00.03.00.01 |
+| DJI Pilot 2 | 6.0.1.1 |
+
+### 即将支持的功能列表
+
+机场上云API：
+
+- 设备通信备份链路切换
+- 飞行器急停控制
+- 飞行器返航备降点控制
+- 一键自检
+
+## 上云API V1.3.0 beta3 发布记录
+
+### 发布日期
+
+2022-11-14
+
+### 发布功能列表
+
+机场：
+
+- 新增配置更新协议：支持配置 NTP 服务 Host
+
+### 修复的问题
+
+机场部署时，MQTT 账号密码设置无效
+
+### 支持产品列表与固件版本
+
+DJI Pilot 2 上云
+
+| 产品 | 固件版本 |
+| --- | --- |
+| DJI Mavic 3 行业系列 | 05.00.02.06 |
+| Matrice 30 系列 | 04.05.10.03 |
+| Matrice 300 RTK | 04.01.00.00 |
+| DJI Pilot 2 | 5.0.2.9 |
+
+机场上云（适配实体机场，非单板）
+
+| 产品 | 固件版本 |
+| --- | --- |
+| Matrice 30 系列 | 05.01.02.12 |
+| 大疆机场 | 00.03.00.01 |
+| DJI Pilot 2 | 6.0.0.25 |
+
+### 即将支持的功能列表
+
+- 媒体文件上传优先级控制
+- 飞行器电池保养状态切换
+- 飞行器设备退出状态通知
+- 机场电池保存模式切换
+- 机场声光报警开关切换
+
+## 上云API V1.3.0 beta2 发布记录
+
+### 发布日期
+
+2022-11-04
+
+### 发布功能列表
+
+机场：
+
+- 设备管理功能，新增`设备属性设置`API，支持以下几项的飞行器属性设置。
+
+  - 飞行器夜航灯状态 `night_lights_state`
+  - 限高 `height_limit`
+  - 限远 `distance_limit_status`
+  - 避障 `obstacle_avoidance`
+- 新增机场属性：
+
+| 机场属性 | 说明 | 结构 |
+| --- | --- | --- |
+| activation_time | 机场激活时间(unix时间戳) | int |
+| maintain_status | 机场保养状态 | struct |
+| air_conditioner_mode | 空调工作模式 | enum |
+| battery_store_mode | 电池运行模式 | enum |
+| alarm_state | 机场声光报警状态 | enum |
+| drone_battery_maintenance_info | 飞行器电池保养信息 | struct |
+| backup_battery | 机场备用电池信息 | struct |
+
+- 新增 Demo [机场功能预览视频](https://developer.dji.com/doc/cloud-api-tutorial/cn/quick-start/function-display-video.html)
+- 新增 Mavic 3 行业系列相关参数到[航线文件格式](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dji-wpml/template-kml.html)
+- 更新[云端 API 错误码](https://developer.dji.com/doc/cloud-api-tutorial/cn/error-code.html)
+
+### 修复的问题
+
+机场无法使用minio：已修复
+
+### 支持产品列表与固件版本
+
+DJI Pilot 2 上云
+
+| 产品 | 固件版本 |
+| --- | --- |
+| DJI Mavic 3 行业系列 | 05.00.02.04 |
+| Matrice 30 系列 | 04.05.10.03 |
+| Matrice 300 RTK | 04.01.00.00 |
+| DJI Pilot 2 | 5.0.2.9 |
+
+机场上云（适配实体机场，非单板）
+
+| 产品 | 固件版本 |
+| --- | --- |
+| Matrice 30 系列 | 04.05.12.14 |
+| 大疆机场 | 04.05.12.19 |
+| DJI Pilot 2 | 6.0.0.25 |
+
+### 即将支持的功能列表
+
+- 媒体文件上传优先级控制
+- 飞行器电池保养状态切换
+- 飞行器设备退出状态通知
+- 机场电池保存模式切换
+- 机场声光报警开关切换
+
+## 上云API V1.3.0 beta1 发布记录
+
+### 发布日期
+
+2022-10-21
+
+### 发布功能列表
+
+机场：
+
+- 直播功能新增接口`设置直播镜头`
+- 航线管理功能逻辑优化：
+  - 废弃接口：`创建航线任务`
+  - 新增接口：`下发任务`，`执行任务`，`取消任务`
+
+### 支持产品列表与固件版本
+
+DJI Pilot 2 上云
+
+| 产品 | 固件版本 |
+| --- | --- |
+| DJI Mavic 3 行业系列 | 05.00.02.04 |
+| Matrice 30 系列 | 04.05.10.03 |
+| Matrice 300 RTK | 04.01.00.00 |
+| DJI Pilot 2 | 5.0.2.9 |
+
+机场上云
+
+| 产品 | 固件版本 | 备注 |
+| --- | --- | --- |
+| Matrice 30 系列；大疆机场；DJI Pilot 2 | 04.05.12.14；00.02.05.14；6.0.0.25 | 适配实体机场（非单板） |
+
+### 即将支持的功能列表
+
+机场新增：
+
+- 通信链路切换
+- 电池保养状态切换
+- 电池保存模式切换
+- 声光报警开关
+
+## 上云API V1.2.0 发布记录
+
+### 发布日期
+
+2022-09-09
+
+### 发布功能列表
+
+机场新增支持：
+
+- HMS 功能、远程调试、固件升级、远程日志
+- 一键返航
+- 文件上传新增支持对象存储：aws、minio
+
+### 支持产品列表与固件版本
+
+DJI Pilot 2 上云
+
+| 产品 | 固件版本 |
+| --- | --- |
+| DJI Mavic 3 行业系列 | 05.00.02.04 |
+| Matrice 30 系列 | 04.05.10.03 |
+| Matrice 300 RTK | 04.01.00.00 |
+| DJI Pilot 2 | 5.0.2.9 |
+
+机场上云
+
+| 产品 | 固件版本 |
+| --- | --- |
+| Matrice 30 系列；大疆机场；DJI Pilot 2 | 04.01.0021；99.02.0305；6.0.0.24 |
+
+### 即将支持的功能列表
+
+机场新增支持：
+
+- 直播切换镜头
+- 远程控制4G图传
+- 航线任务逻辑优化：增加指令预下发、暂停等功能
+
+DJI Pilot 2 新增支持：
+
+- 文件上传新增支持对象存储：minio
+- 媒体管理：
+  1. 新增`上报文件夹上传结果`接口：提供上传文件总数与成功上传文件数
+  2. 优化`上报文件上传结果`接口：提供媒体文件上传结果的标志位
+
+## 上云API V1.1.0 发布记录
+
+### 发布日期：
+
+2022-07-22
+
+### 重点功能：
+
+- 支持通过机场上云。
+- 支持将机场绑定到组织进行自定义的设备管理。
+- 支持机场属性上报、上下线。
+- 支持机场摄像头、无人机进行视频直播，直播协议支持RTMP、Agora、GB28181、RTSP。
+- 支持机场通过云端下发航线任务。
+- 支持机场自动上传媒体文件到云端。
+
+### 支持产品列表：
+
+- DJI M30系列 + 大疆机场
+
+## 上云API V1.0.0 发布记录
+
+### 发布日期：
+
+2022-03-21
+
+### 重点功能：
+
+- 支持无人机通过DJI Pilot 2登录注册上云（私有云或公有云）。
+- 支持无人机视频直播，直播协议支持RTMP、Agora、GB28181、RTSP。
+- 支持从DJI Pilot 2中直接发起直播请求。
+- 支持DJI Pilot 2航线库云端同步。
+- 支持大疆航线文件格式，全新的航线文件格式支持在M30系列、M300 RTK及后续新机型上运行。
+- 支持DJI Pilot 2媒体库，支持媒体自动上传及手动上传。
+- 支持DJI Pilot 2态势感知、地图元素功能。
+- 支持DJI Pilot 2 内嵌webview上运行三方web页面。
+- 支持DJI Pilot 2打开第三方App应用。
+- 支持DJI Pilot 2 Log日志拉取。
+
+### 支持产品列表：
+
+- DJI M30系列 + DJI Pilot 2
+- DJI M300 RTK + DJI Pilot 2
+
+*备注：该版本功能暂不支持大疆机场。*
+
+### 支持固件版本：
+
+- M300 RTK: v04.00.00.21
+- DJI Smart Controller: v04.00.00.18
+- M30 Series: v00.04.0501
+- DJI RC Plus: v01.02.0108
+- DJI Pilot 2: v4.0.0.74
+
+### 已知问题列表：
+
+- 媒体文件上传至minio对象存储时会出现上传失败的现象。
+
+2024 DJI. All Rights Reserved.
+
+---

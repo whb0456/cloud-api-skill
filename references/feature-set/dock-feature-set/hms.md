@@ -1,0 +1,55 @@
+---
+title: "HMS 功能"
+source: https://developer.dji.com/doc/cloud-api-tutorial/cn/feature-set/dock-feature-set/hms.html
+version: 上云API v1.16.1 (developer.dji.com 官网快照 2026-09)
+---
+
+## 功能概述
+
+上云API 开放HMS功能是为了设备的问题能在云端显示，提升用户对于风险的感知和处理能力，以保障作业安全。
+
+> **说明：** HMS 上报的是全量的告警信息。若上一次 HMS 上报中的告警，在本次 HMS 上报中消失了，则说明该告警解除了。
+
+### 告警文案查询
+
+用户需要通过上报的协议中的字段信息拼接`文案Key`。凭借`文案Key`在`告警文案查询json文件`中查询对应的告警文案。根据告警的设备的不同，拼接规则也有区别。
+
+- 告警文案查询json文件：[hms.json](https://terra-1-g.djicdn.com/fee90c2e03e04e8da67ea6f56365fc76/SDK%20%E6%96%87%E6%A1%A3/CloudAPI/hms.json)。
+- 拼接规则及示例：
+
+  - {code}为告警码，{in_the_sky}为设备是否在飞行，都可通过协议中的字段获得。HMS功能的协议中的字段及其解释可参见[云端 API > HMS 功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/hms.html#%E5%81%A5%E5%BA%B7%E5%91%8A%E8%AD%A6)。
+  - 如果是机场设备的告警，需要将`dock_tip_`拼接在{code}前，机场拼接逻辑：`dock_tip_{code}`
+     以错误码为`0x16100083`为例，文案Key为：`dock_tip_0x16100083`
+  - 如果是飞行器的告警，需要用户自行拼接`文案Key`。飞行器拼接逻辑：`fpv_tip_{code}_{in_the_sky}`
+     以错误码为`0x16100083`为例：
+
+    - 若协议中`in_the_sky`为0，说明设备在飞行时与在地面时，统一使用`fpv_tip_0x16100083`的文案Key。
+    - 若协议中`in_the_sky`为1，设备在飞行时，文案Key为：`fpv_tip_0x16100083_in_the_sky`。设备在地面时，文案Key为：`fpv_tip_0x16100083`。
+
+### 告警文案填充
+
+从告警文案查询json文件：[hms.json](https://terra-1-g.djicdn.com/fee90c2e03e04e8da67ea6f56365fc76/SDK%20%E6%96%87%E6%A1%A3/CloudAPI/hms.json)中可以看到，查询得到的告警文案中会存在"%alarmid"、"%index"等需要填充的内容。
+
+填充规则及示例：
+
+- 用于填充的内容，可由HMS功能的协议中的“args”字段获得。args字段解释、args字段下的完整变量列举、变量介绍，具体可以参考[HMS 功能](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/hms.html)。例如，变量有`alarmid`、`sensor_index`、`component_index`等。
+- 飞行器告警文案填充规则：
+
+  1. 若文案中带有"%alarmid"，将其替换为具体的16进制alarmid，如0x16100001。
+  2. 若文案中带有"%index"，将其替换为sensor_index + 1。
+  3. 若文案中带有"%component_index"，将其替换为component_index + 1（最终范围限定在1和2之间，因为目前最多支持1号云台、2号云台和3号云台）。
+  4. 若文案中带有"%battery_index"，且sensor_index为0，则使用"左"替换掉"%battery_index"，否则，使用"右"替换。
+- 机场告警文案填充规则：
+
+  1. 若文案中带有"%dock_cover_index"，且sensor_index为0，则使用"左"替换掉"%dock_cover_index"，否则，使用"右"替换。
+  2. 若文案中带有"%charging_rod_index"，在sensor_index为0时，则使用"前"替换"%charging_rod_index"。sensor_index为1，则使用"后"替换。sensor_index为2，则使用"左"替换。sensor_index为3，则使用"右"替换。
+
+## 交互时序
+
+设备通过`健康告警`协议（Topic: thing/product/{gateway_sn}/events Method: hms）上传机场设备与飞行器的告警信息到云端，云端通过拼接Key、查询json文件、渲染文案等行为后获得正确且完整的告警文案并呈现在Web界面。
+
+## 接口详细实现
+
+[HMS 管理](https://developer.dji.com/doc/cloud-api-tutorial/cn/api-reference/dock-to-cloud/mqtt/dock/dock1/hms.html)
+
+- 健康告警
