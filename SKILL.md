@@ -7,6 +7,10 @@ description: 大疆上云API（DJI Cloud API）离线全量知识库，抓取自
 
 本 skill 内置大疆上云API官方文档的完整离线快照（v1.16.1，2026-09 抓取自 developer.dji.com，共 145 页，目录在 `references/INDEX.md`）。回答问题时**不要访问官网**，以本库内容为准；仅当本库确实缺少时才告知用户并考虑联网。
 
+## 安装约定
+
+本仓库根目录就是可分发的 skill 包。安装时必须将 `SKILL.md` 与同级的 `references/` 一起复制到 Codex 的 skill 目录，例如项目级 `.agents/skills/dji-cloud-api/` 或用户级 `~/.agents/skills/dji-cloud-api/`。`references/` 中的路径均相对于本文件解析；不要单独复制 `SKILL.md`。
+
 ## 查询协议
 
 1. **先定位，再阅读。** 读取 `references/INDEX.md`（总目录：每页列出标题、文件路径、MQTT topic、HTTP 端点、小节名），据此选择 1~3 个最相关文件。
@@ -71,4 +75,3 @@ references/
 - 枚举值/属性带"支持产品"标注时以表格行为准；官方标注"已废弃/待废弃"的接口不要推荐（如 `创建航线任务` 已废弃，改用 `下发任务`+`执行任务`）。
 - 交互时序图以 ```mermaid 代码块内联保存，可直接展示或转图。
 - 快照为 v1.16.1（2026-09）。若用户质疑时效性，可对比 `release-notes.md` 中最新版本条目判断是否需要更新本库。
-

@@ -1,0 +1,10 @@
+# Local extraction and build workspace; the distributable skill is at the repository root.
+/work/
+
+# Local Codex installation mirror.
+/.agents/
+
+# OS/editor files.
+.DS_Store
+Thumbs.db
+.vscode/
